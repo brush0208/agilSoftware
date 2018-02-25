@@ -1,5 +1,6 @@
 package org.brush.pay.transaction;
 
+import org.brush.pay.database.PayrollDatabase;
 import org.brush.pay.model.Employee;
 import org.brush.pay.model.classification.PaymentClassification;
 import org.brush.pay.model.method.HoldMethod;
@@ -28,6 +29,7 @@ public abstract class AddEmployeeTransaction implements Transaction{
         employee.setClassification(classification);
         employee.setMethod(holdMethod);
         employee.setSchedule(schedule);
+        PayrollDatabase.getDatabse().addEmployee(empid,employee);
 
     }
 }

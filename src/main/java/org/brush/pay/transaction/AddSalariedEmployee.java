@@ -1,6 +1,8 @@
 package org.brush.pay.transaction;
 
 import org.brush.pay.model.classification.PaymentClassification;
+import org.brush.pay.model.classification.SalariedClassification;
+import org.brush.pay.model.schedule.MonthlySchedule;
 import org.brush.pay.model.schedule.PaymentSchedule;
 
 public class AddSalariedEmployee extends AddEmployeeTransaction{
@@ -13,10 +15,10 @@ public class AddSalariedEmployee extends AddEmployeeTransaction{
 
 
     public PaymentClassification getClassification() {
-        return null;
+        return new SalariedClassification();
     }
 
     public PaymentSchedule getSchedule() {
-        return null;
+        return new MonthlySchedule();
     }
 }
